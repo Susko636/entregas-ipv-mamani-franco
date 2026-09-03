@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brvkucugmp7ug"]
+
+[ext_resource type="PackedScene" uid="uid://botkdi5pempjg" path="res://entities/player.tscn" id="1_ig7tw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xm2m"]
+load_path = "res://.godot/imported/background.png-1fdba8b6a966ce2c2ffc607f7c096e95.ctex"
+
+[node name="Main" type="Node" unique_id=2113418188]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1507944768]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_0xm2m")
+expand_mode = 1
+
+[node name="Player" parent="." unique_id=1981729809 instance=ExtResource("1_ig7tw")]
+speed = 100.0
