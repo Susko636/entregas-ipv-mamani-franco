@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dnc5muoeyfwah"]
+
+[ext_resource type="PackedScene" uid="uid://vqu8xh4hhedx" path="res://entities/player/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwss7yl8udbui" path="res://assets/textures/background.png" id="2"]
+[ext_resource type="Script" uid="uid://bkmvt4ya2xfm8" path="res://Main.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://7ixrgbfhdfe3" path="res://entities/world/floor.tscn" id="3_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://bscjwoaotlcqc" path="res://entities/enemies/Turret.tscn" id="4"]
+[ext_resource type="Script" uid="uid://ertnqm8kd3lw" path="res://entities/enemies/TurretsSpawner.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://j14wrxanwhni" path="res://assets/textures/player.png" id="7_lgr22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ganw1"]
+size = Vector2(63, 64)
+
+[node name="Main" type="Node" unique_id=1320789180]
+script = ExtResource("3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1128076488]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1740314087]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Player" parent="." unique_id=1706201887 instance=ExtResource("1")]
+position = Vector2(413.003, 395.272)
+JUMP_SPEED = -300.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=869954539]
+
+[node name="Floor" parent="." unique_id=1760576444 instance=ExtResource("3_3dxm6")]
+position = Vector2(399, 510)
+
+[node name="Floor2" parent="." unique_id=1997455833 instance=ExtResource("3_3dxm6")]
+position = Vector2(1199, 510)
+
+[node name="Floor3" parent="." unique_id=1815731764 instance=ExtResource("3_3dxm6")]
+position = Vector2(1998, 510)
+
+[node name="TurretsSpawner" type="Node" parent="." unique_id=623955673]
+script = ExtResource("5")
+turret_scene = ExtResource("4")
+
+[node name="Cubo" type="RigidBody2D" parent="." unique_id=449912959]
+position = Vector2(645, 391)
+
+[node name="CuboSprite" type="Sprite2D" parent="Cubo" unique_id=1274730079]
+texture = ExtResource("7_lgr22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo" unique_id=1959922621]
+shape = SubResource("RectangleShape2D_ganw1")
