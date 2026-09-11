@@ -24,7 +24,7 @@ texture = ExtResource("3")
 script = ExtResource("4")
 projectile_scene = ExtResource("5")
 
-[node name="CannonTip" type="Marker2D" parent="." unique_id=154605314]
+[node name="CannonTip" type="Marker2D" parent="Cannon" unique_id=154605314]
 position = Vector2(15, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=711685196]
