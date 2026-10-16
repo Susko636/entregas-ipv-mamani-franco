@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://deai5ttsgi6pl"]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Default-Medium.tres" id="1_rhil2"]
+[ext_resource type="Script" uid="uid://ofkwomevkp63" path="res://src/game/ui/option/action_input.gd" id="1_vfvfu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfvfu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge28t"]
+
+[node name="ActionInput" type="PanelContainer" unique_id=1272463764]
+theme_override_styles/panel = SubResource("StyleBoxFlat_vfvfu")
+script = ExtResource("1_vfvfu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=70581881]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=186252003]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ge28t")
+
+[node name="Input" type="Label" parent="HBoxContainer/PanelContainer" unique_id=1648720896]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rhil2")
+
+[node name="Action" type="Label" parent="HBoxContainer" unique_id=230207722]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rhil2")
